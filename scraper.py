@@ -5,13 +5,13 @@ count = 0
 
 FormatList = ["Managed","Native", "Mobile", "iPad", "iPhone","Android", "Salesforce1","Lightning Ready"]
 FilterList = ["9","6","10","11","12","13","14","15"]
+URLRoot = "https://appexchange.salesforce.com/results?pageNo={0}&filter="
 
 for Filter0 in FilterList:
   print count
   for page in range(1,40):
     URLPath = URLRoot.format(str(page))
     URL = URLPath+Filter0
-    print URL
   
     html = scraperwiki.scrape(URL)
     scrape_data = scrape("""
