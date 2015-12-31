@@ -1,8 +1,12 @@
 import scraperwiki
 from scrapemark import scrape
 import scraperwiki
-
+count = 0
 for page in range(1,40):
+  count = count+1
+  if count>2:
+    break
+  print count
   URL = "https://appexchange.salesforce.com/results?pageNo="+str(page)+"&filter=9" #Managed
   #URL = "https://appexchange.salesforce.com/results?pageNo="+str(page)+"&filter=a0L3000000OvSOFEA3" #Customer Service
   #URL = "https://appexchange.salesforce.com/results?pageNo="+str(page)+"&filter=a0L3000000OvSOGEA3" #Marketing
@@ -14,7 +18,6 @@ for page in range(1,40):
   #URL = "https://appexchange.salesforce.com/category/analytics" #Analytics
   
   
-  print URL
   html = scraperwiki.scrape(URL)
   scrape_data = scrape("""
    {*
