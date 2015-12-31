@@ -26,5 +26,3 @@ for Filter0 in FilterList:
   
     scraperwiki.sqlite.save(unique_keys=["URL"], data=data)
   count = count+1
-  if count>2:
-    break
